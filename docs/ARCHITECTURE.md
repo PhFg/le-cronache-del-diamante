@@ -1,6 +1,6 @@
 # Arquitetura inicial
 
-- Engine: Godot 4.x; linguagem: GDScript; repositório Git; edição via Windsurf.
+- Engine: Godot 4.7 (versão oficial de desenvolvimento); linguagem: GDScript; repositório Git; edição via Windsurf.
 - Scene principal: `scenes/main_menu.tscn`; controlador: `scripts/main_menu.gd`.
 - Autoload `GameState`: escolha do personagem desacoplada da interface.
 - Representação gráfica e regras de combate devem permanecer separadas.
