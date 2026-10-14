@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/verddro/exploration/idle/verddro_idle_s.png" id="1_idle_s"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_idle_s")
+}],
+"loop": true,
+"name": &"idle_s",
+"speed": 6.0
+}]

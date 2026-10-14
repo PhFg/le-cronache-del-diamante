@@ -1,8 +1,17 @@
 extends CharacterBody2D
 
 const SPEED := 220.0
+const CharacterVisualScript = preload("res://scripts/characters/character_visual.gd")
 var hero_id := "verddro"
 var walk_time := 0.0
+var visual: CharacterVisualScript
+var use_sprite := false
+
+func _ready() -> void:
+    visual = CharacterVisualScript.new()
+    visual.name = "Visual"
+    add_child(visual)
+    use_sprite = visual.setup(hero_id)
 
 func _physics_process(delta: float) -> void:
     var direction := Vector2.ZERO
@@ -14,11 +23,14 @@ func _physics_process(delta: float) -> void:
     move_and_slide()
     if velocity.length() > 0.1:
         walk_time += delta * 12.0
+    visual.update_movement(velocity)
     queue_redraw()
 
 func _draw() -> void:
     var bob := sin(walk_time) * 2.0 if velocity.length() > 0.1 else 0.0
     draw_ellipse_shadow()
+    if use_sprite:
+        return
     if hero_id == "tavorko":
         draw_colored_polygon(PackedVector2Array([Vector2(-21,-26+bob),Vector2(-7,-42+bob),Vector2(17,-37+bob),Vector2(25,-17+bob),Vector2(0,-6+bob)]), Color("e9ae3e"))
         draw_circle(Vector2(0,-25+bob), 17, Color("df453b"))
