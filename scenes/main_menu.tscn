@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.055, 0.13, 0.13, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="Title" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "LE CRONACHE DEL DIAMANTE"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Il Risveglio della Libertà"
+horizontal_alignment = 1
+
+[node name="Instructions" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "Escolha seu protagonista"
+horizontal_alignment = 1
+
+[node name="VerddroButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 64)
+text = "VERDDRO — Fúria Esmeralda"
+
+[node name="TavorkoButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 64)
+text = "TAVORKO — Chuva de Flechas"
+
+[node name="Status" type="Label" parent="Center/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(400, 70)
+text = "V0.0 — Fundação"
+horizontal_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,6 @@
+# Godot generated cache
+.godot/
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.vscode/
