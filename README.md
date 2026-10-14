@@ -1,7 +1,7 @@
 # Le Cronache del Diamante
 ## Il Risveglio della Libertà
 
-Jogo RPG original em desenvolvimento com Godot 4.7 e GDScript. Direção artística proposta: 2.25D — exploração pictórica e batalhas expressivas.
+Jogo RPG original em desenvolvimento com Godot 4.7 e GDScript. Direção artística: 2.25D ilustrado — exploração pictórica e batalhas expressivas.
 
 ## Primeira execução
 1. Instale a Godot 4.7 (versão oficial de desenvolvimento do projeto).
@@ -9,17 +9,32 @@ Jogo RPG original em desenvolvimento com Godot 4.7 e GDScript. Direção artíst
 3. Abra o projeto e pressione F6 na cena `scenes/main_menu.tscn` ou F5 para executar o projeto.
 4. Clique em Verddro ou Tavorko. A escolha será registrada em `GameState` nesta sessão.
 
-**Estado atual:** V0.0 — tela funcional de seleção; ainda sem mapa, arte final, batalha ou salvamento. Os textos são temporários. 
+Não há dependências externas nem downloads de assets.
 
-## Próximos marcos
-- V0.1: cena de exploração 2.25D, duas origens e movimentação
-- V0.2: protótipo do sistema de batalha por turnos
-- V0.3: missão inicial `Il Primo Decreto`
+### Controles
+- **WASD / setas:** mover (oito direções)
+- **E:** interagir quando próximo de um objeto
+- **Esc:** voltar ao menu
+
+## Estado do desenvolvimento
+
+| Versão | Escopo | Situação |
+|---|---|---|
+| V0.0 | Fundação do projeto | ✅ Concluída |
+| V0.1 | Seleção dos protagonistas, exploração e interação | ✅ Concluída e validada |
+| V0.2 | Produção artística e animação dos personagens | 🚧 Em desenvolvimento |
+| V0.3 | **Il Primo Scontro** — primeiro sistema de batalha por turnos interativos | Planejada |
+| Futuro | Multiplayer cooperativo | Expansão futura, não implementada |
+
+### V0.1 — Il Primo Decreto (protótipo)
+Após escolher Verddro ou Tavorko, o jogo leva a uma região de origem jogável própria: Bosque Esmeralda (Verddro) ou Vila das Trocas (Tavorko). Inclui movimentação, colisões, câmera que acompanha o personagem e interação com objetos e habitantes. Os cenários ainda são provisórios, desenhados por código.
+
+### V0.2 — em andamento
+- **Verddro** já possui o primeiro sprite ilustrado integrado e validado visualmente.
+- **Tavorko** ainda utiliza temporariamente seu desenho geométrico.
+- A movimentação em oito direções já está implementada; as animações ilustradas (idle, walk, run e interact) ainda estão sendo produzidas.
+- Especificações de arte em `docs/ART_DIRECTION.md`; roteiro de testes em `docs/V0.2_TEST_PLAN.md`.
+
+Ainda não implementados: batalha, missões, salvamento e multiplayer.
 
 Consultar `docs/` antes de ampliar a implementação.
-
-## V0.1 — Il Primo Decreto (prototype)
-
-After choosing Verddro or Tavorko, the game transitions to a distinct playable origin region. Move with WASD or arrows, interact with E when close to an object, and return to the menu with Escape. Scenery and characters are procedural placeholders for validating exploration, collisions and camera behavior before final 2.25D artwork. Battle, quests and multiplayer are not implemented yet.
-
-To run: import `project.godot` in Godot 4.7 and press F5. No external dependencies or asset downloads are needed.
