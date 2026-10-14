@@ -1,15 +1,10 @@
-# Default: normalize text files to LF
 * text=auto
-
-# Godot and development files
 *.gd text eol=lf
 *.tscn text eol=lf
 *.tres text eol=lf
 *.godot text eol=lf
 *.md text eol=lf
 *.json text eol=lf
-
-# Binary assets
 *.png binary
 *.jpg binary
 *.jpeg binary

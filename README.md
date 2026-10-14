@@ -17,3 +17,9 @@ Jogo RPG original em desenvolvimento com Godot 4 e GDScript. Direção artístic
 - V0.3: missão inicial `Il Primo Decreto`
 
 Consultar `docs/` antes de ampliar a implementação.
+
+## V0.1 — Il Primo Decreto (prototype)
+
+After choosing Verddro or Tavorko, the game transitions to a distinct playable origin region. Move with WASD or arrows, interact with E when close to an object, and return to the menu with Escape. Scenery and characters are procedural placeholders for validating exploration, collisions and camera behavior before final 2.25D artwork. Battle, quests and multiplayer are not implemented yet.
+
+To run: import `project.godot` in Godot 4.3+ and press F5. No external dependencies or asset downloads are needed.

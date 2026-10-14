@@ -8,8 +8,8 @@ func _ready() -> void:
 
 func _choose_verddro() -> void:
     GameState.choose_protagonist("verddro")
-    status_label.text = "Verddro escolhido! História de origem em desenvolvimento."
+    get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 func _choose_tavorko() -> void:
     GameState.choose_protagonist("tavorko")
-    status_label.text = "Tavorko escolhido! História de origem em desenvolvimento."
+    get_tree().change_scene_to_file("res://scenes/world.tscn")
