@@ -1,0 +1,148 @@
+{
+  "source": {
+    "file": "verddro_style_C_hybrid.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "char_bbox_alpha_ge_128": [
+      217,
+      74,
+      807,
+      949
+    ],
+    "ground_anchor": [
+      437.2,
+      910.0
+    ]
+  },
+  "frames": {
+    "256": {
+      "file": "verddro_hybrid_256.png",
+      "scale_from_source": 0.24,
+      "anchor": [
+        128.0,
+        236.0
+      ],
+      "char_height_px": 215,
+      "margins_px": {
+        "left": 73,
+        "top": 33,
+        "right": 37,
+        "bottom": 8
+      },
+      "png_kb": 48.7,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "edge_pixels_semitransparent": 4061,
+      "transparent_pixels_with_color": 8,
+      "bbox": [
+        73,
+        33,
+        219,
+        248
+      ]
+    },
+    "384": {
+      "file": "verddro_hybrid_384.png",
+      "scale_from_source": 0.36,
+      "anchor": [
+        192.0,
+        354.0
+      ],
+      "char_height_px": 320,
+      "margins_px": {
+        "left": 110,
+        "top": 51,
+        "right": 56,
+        "bottom": 13
+      },
+      "png_kb": 95.4,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "edge_pixels_semitransparent": 6641,
+      "transparent_pixels_with_color": 0,
+      "bbox": [
+        110,
+        51,
+        328,
+        371
+      ]
+    }
+  },
+  "simulation": {
+    "720p": {
+      "256": {
+        "visual_scale": 0.4507,
+        "screen_scale": 0.5048,
+        "screen_char_height_px": 105,
+        "sprite_px": [
+          129,
+          129
+        ],
+        "sharpness_mean_gradient": 35.11
+      },
+      "384": {
+        "visual_scale": 0.3005,
+        "screen_scale": 0.3365,
+        "screen_char_height_px": 105,
+        "sprite_px": [
+          129,
+          129
+        ],
+        "sharpness_mean_gradient": 34.65
+      }
+    },
+    "1080p": {
+      "256": {
+        "visual_scale": 0.4507,
+        "screen_scale": 0.7571,
+        "screen_char_height_px": 159,
+        "sprite_px": [
+          194,
+          194
+        ],
+        "sharpness_mean_gradient": 31.74
+      },
+      "384": {
+        "visual_scale": 0.3005,
+        "screen_scale": 0.5048,
+        "screen_char_height_px": 159,
+        "sprite_px": [
+          194,
+          194
+        ],
+        "sharpness_mean_gradient": 34.18
+      }
+    }
+  },
+  "comparison": {
+    "720p": {
+      "mean_abs_diff": 1.17,
+      "pixels_diff_gt_16_pct": 3.33
+    },
+    "1080p": {
+      "mean_abs_diff": 1.04,
+      "pixels_diff_gt_16_pct": 2.62
+    }
+  },
+  "memory": {
+    "256": {
+      "frame_rgba8_kb": 256.0,
+      "frame_with_mipmaps_kb": 341.3,
+      "character_frames": 224,
+      "character_uncompressed_mb": 74.7,
+      "character_vram_compressed_8bpp_mb": 18.7
+    },
+    "384": {
+      "frame_rgba8_kb": 576.0,
+      "frame_with_mipmaps_kb": 768.0,
+      "character_frames": 224,
+      "character_uncompressed_mb": 168.0,
+      "character_vram_compressed_8bpp_mb": 42.0
+    }
+  }
+}

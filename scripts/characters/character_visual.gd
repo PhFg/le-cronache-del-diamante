@@ -16,8 +16,8 @@ const MOVE_THRESHOLD := 0.1
 
 @export var character_id: StringName = &""
 @export var frames_override: SpriteFrames
-@export var foot_anchor := Vector2(128, 236)
-@export var visual_scale := 0.45
+@export var foot_anchor := Vector2(192, 354)
+@export var visual_scale := 0.30
 
 var facing: StringName = &"s"
 var state: StringName = &"idle"

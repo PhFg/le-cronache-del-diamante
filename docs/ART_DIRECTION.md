@@ -16,6 +16,15 @@ Os personagens são baseados nas construções originais de LEGO, reinterpretado
 ### Referência de qualidade
 A primeira ficha individual de **Tavorko** é a referência principal de maturidade e acabamento visual. Toda nova arte de personagem deve ser comparada a ela.
 
+## Decisão oficial de exploração (V0.2)
+Aprovada por Pedro e Gustavo após os estudos A/B/C e o teste A/B de resolução na Godot 4.7.
+
+- **Look oficial: C — Híbrido.** Superfície pintada (pós-processo Kuwahara leve), cel shading de 3 tons com sombras coloridas, luz cinematográfica com foco em rosto e peito, contraluz menta, contornos verde-escuros hierarquizados e cristais esmeralda como únicos pontos com brilho/bloom.
+- **Resolução oficial dos protagonistas: 384 × 384 px**, escala 0.30, âncora dos pés (192, 354).
+- Motivo: em 1280 × 720 a 384 é equivalente à 256; em 1920 × 1080 e em telas de tablet é visivelmente mais nítida (a 256 precisaria ser ampliada em telas de ~2560 × 1600).
+- Pipeline e referências: `art_3d/tools/setup_style_study.py` (`--style C`), `art_3d/verddro/renders/verddro_style_C_hybrid.png`, relatório `art_3d/verddro/renders/resolution_tests/`.
+- O sprite-protótipo anterior (256 px, arte pré-Look C) está guardado em `art_3d/verddro/backups/v0.2_prototype_256/`, fora do jogo (pasta com `.gdignore`).
+
 ## Animação de exploração
 
 ### Direções
@@ -56,18 +65,26 @@ assets/characters/<personagem>/
 ### Quadros PNG
 | Item | Especificação |
 |---|---|
-| Tamanho do quadro | **256 × 256 px** |
+| Tamanho do quadro | **384 × 384 px** (protagonistas) |
 | Fundo | Transparente (PNG RGBA, sRGB) |
-| Altura do personagem no quadro | ~200–220 px |
-| Ponto dos pés (âncora) | **(128, 236)** — fixo em todos os quadros, direções e estados |
-| Margem de segurança | ≥ 8 px em todos os lados (asas, cauda, arco) |
-| Arte mestre | 1024 px, guardada em `concept/` para reexportação |
+| Altura do personagem no quadro | ~300–320 px |
+| Ponto dos pés (âncora) | **(192, 354)** — fixo em todos os quadros, direções e estados. Em vista três quartos, é o ponto do chão entre os dois pés |
+| Margem de segurança | ≥ 12 px em todos os lados (asas, cauda, arco) |
+| Arte mestre | Render 1024 × 1024 do Look C, guardado em `art_3d/<personagem>/renders/` para reexportação |
+| Personagens secundários | 256 × 256 px, âncora (128, 236), escala 0.45 (mesma altura na tela) |
 
 ### Escala na tela
-- Altura visual-alvo: **~100–110 px** na tela base de 1280 × 720.
+- Altura visual-alvo: **~100–110 px** na tela base de 1280 × 720 (medido: ~107 px).
 - Com o zoom da câmera (1.12), isso corresponde a ~90–98 px no mundo.
-- Escala inicial do sprite: **0.45** (`visual_scale`), ajustável após validação no Bosque Esmeralda.
+- Escala oficial do sprite: **0.30** (`visual_scale`, padrão do `CharacterVisual`).
 - A âncora dos pés coincide com a origem do `CharacterBody2D` (`offset = -foot_anchor`, `centered = false`).
+
+### Memória estimada (224 quadros por personagem, com mipmaps)
+| | Sem compressão | Com compressão de VRAM (~8 bpp) |
+|---|---|---|
+| Por quadro 384 px | 768 KB | 192 KB |
+| Por protagonista | ~168 MB | ~42 MB |
+- Compressão de textura (VRAM) obrigatória nas exportações para tablet.
 
 ### Convenção de animações
 - Nome: `estado_direção`, em minúsculas: `idle_n`, `walk_ne`, `run_sw`, `interact_w`.
@@ -84,13 +101,14 @@ assets/characters/<personagem>/
 
 ### Arquivos
 ```
-assets/characters/<personagem>/exploration/<estado>/<personagem>_<estado>_<direção>.png   (tira horizontal de quadros 256 px)
+assets/characters/<personagem>/exploration/<estado>/<personagem>_<estado>_<direção>.png   (tira horizontal de quadros 384 px)
 assets/characters/<personagem>/<personagem>_exploration.tres                              (SpriteFrames)
 ```
-Exemplo: `assets/characters/verddro/exploration/walk/verddro_walk_ne.png` (8 quadros → 2048 × 256).
+Exemplo: `assets/characters/verddro/exploration/walk/verddro_walk_ne.png` (8 quadros → 3072 × 384).
 
 ### Importação
-- Filtro **Linear** com **mipmaps** ativados nas texturas de personagem (evita serrilhado na redução).
+- Filtro **Linear** com **mipmaps** ativados nas texturas de personagem (evita serrilhado na redução); o `CharacterVisual` usa `TEXTURE_FILTER_LINEAR_WITH_MIPMAPS`.
+- Importação sem perdas e `fix_alpha_border` ligado (sem halo nas bordas transparentes).
 - Espelhamento horizontal (W/NW/SW a partir de E/NE/SE) **não** é usado para Tavorko (o arco trocaria de mão); para Verddro, avaliar caso a caso.
 
 ### Etapas futuras da V0.2
