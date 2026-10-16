@@ -6,3 +6,8 @@ Thumbs.db
 .vscode/
 # Release archives
 *.zip
+# Blender backups and temporary save files (.blend files are kept)
+*.blend[0-9]*
+*.blend@
+# Intermediate 3D working copies (not versioned)
+/art_3d/verddro/blender/verddro_model_v1.blend

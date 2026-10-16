@@ -11,5 +11,5 @@
 *.webp binary
 *.ogg binary
 *.wav binary
-*.glb binary
-*.blend binary
+*.glb filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text

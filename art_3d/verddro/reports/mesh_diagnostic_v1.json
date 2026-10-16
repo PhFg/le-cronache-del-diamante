@@ -1,0 +1,221 @@
+{
+  "tool": "art_3d/tools/inspect_model.py",
+  "generated_at": "2026-10-16T13:05:57+00:00",
+  "blender_version": "5.2.2 LTS",
+  "source": "art_3d\\verddro\\blender\\verddro_model_working_v2.blend",
+  "scene": {
+    "objects": 1,
+    "objects_by_type": {
+      "MESH": 1
+    },
+    "mesh_objects": 1,
+    "mesh_datablocks": 1,
+    "materials_in_file": 3,
+    "materials_used_by_meshes": 1,
+    "images": 2
+  },
+  "armatures": [],
+  "totals": {
+    "vertices": 918281,
+    "edges": 2755287,
+    "faces": 1836858,
+    "triangles": 1836858,
+    "tris": 1836858,
+    "quads": 0,
+    "ngons": 0,
+    "non_manifold_edges": 0,
+    "boundary_edges": 0,
+    "edges_more_than_2_faces": 0,
+    "wire_edges": 0,
+    "non_manifold_vertices": 0,
+    "loose_vertices": 0,
+    "inconsistent_normal_edges": 0,
+    "zero_area_faces": 0,
+    "zero_length_edges": 0,
+    "duplicate_vertices": 6,
+    "components": 1,
+    "tiny_islands": 0
+  },
+  "dimensions": {
+    "min": [
+      -0.7243,
+      -0.4639,
+      -0.9537
+    ],
+    "max": [
+      0.7256,
+      0.4686,
+      0.9506
+    ],
+    "size": [
+      1.4499,
+      0.9325,
+      1.9042
+    ],
+    "unit": "METRIC",
+    "scale_length": 1.0,
+    "width_to_height": 0.761
+  },
+  "symmetry": {
+    "center_x": 0.006,
+    "sampled_vertices": 20407,
+    "median_distance": 0.02298,
+    "p90_distance": 0.07803,
+    "ratio_within_0_5pct_width": 0.196,
+    "ratio_within_2pct_height": 0.686,
+    "mirrored_ratio": 0.196
+  },
+  "materials": [
+    {
+      "name": "Material",
+      "users": 0,
+      "fake_user": false
+    },
+    {
+      "name": "Material_0",
+      "users": 1,
+      "fake_user": false
+    },
+    {
+      "name": "Material_0.001",
+      "users": 0,
+      "fake_user": false
+    }
+  ],
+  "images": [
+    {
+      "name": "Render Result",
+      "size": [
+        0,
+        0
+      ],
+      "packed": false,
+      "filepath": "",
+      "users": 1,
+      "source": "VIEWER"
+    },
+    {
+      "name": "Viewer Node",
+      "size": [
+        256,
+        256
+      ],
+      "packed": false,
+      "filepath": "",
+      "users": 1,
+      "source": "VIEWER"
+    }
+  ],
+  "meshes": [
+    {
+      "name": "VERDDRO_MASTER",
+      "mesh_data": "Mesh_0",
+      "counts": {
+        "vertices": 918281,
+        "edges": 2755287,
+        "faces": 1836858,
+        "triangles": 1836858,
+        "tris": 1836858,
+        "quads": 0,
+        "ngons": 0
+      },
+      "transform": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_euler_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "parent": null
+      },
+      "materials": [
+        {
+          "name": "Material_0",
+          "images": []
+        }
+      ],
+      "uv_maps": [],
+      "color_attributes": [],
+      "modifiers": [],
+      "shape_keys": [],
+      "vertex_groups": 0,
+      "components": {
+        "count": 1,
+        "largest_vertices": [
+          918281
+        ],
+        "tiny_islands": 0,
+        "tiny_threshold_vertices": 50
+      },
+      "manifold": {
+        "non_manifold_edges": 0,
+        "boundary_edges": 0,
+        "edges_more_than_2_faces": 0,
+        "wire_edges": 0,
+        "non_manifold_vertices": 0,
+        "loose_vertices": 0,
+        "inconsistent_normal_edges": 0,
+        "zero_area_faces": 0,
+        "zero_length_edges": 0,
+        "duplicate_vertices": 6,
+        "merge_distance": 1e-05
+      }
+    }
+  ],
+  "issues": [
+    {
+      "severity": "high",
+      "area": "retopology",
+      "message": "1836858 triângulos: muito acima do orçamento de jogo (~30000). Retopologia necessária."
+    },
+    {
+      "severity": "high",
+      "area": "retopology",
+      "message": "Malha quase toda triangulada (típico de IA/fotogrametria): sem fluxo de arestas para deformação; refazer em quads."
+    },
+    {
+      "severity": "medium",
+      "area": "geometry",
+      "message": "6 vértices duplicados (distância < 1e-05)."
+    },
+    {
+      "severity": "high",
+      "area": "uv",
+      "message": "VERDDRO_MASTER: sem UV Map."
+    },
+    {
+      "severity": "low",
+      "area": "rigging",
+      "message": "Base do personagem em Z=-0.9537: idealmente os pés ficam em Z=0."
+    },
+    {
+      "severity": "medium",
+      "area": "rigging",
+      "message": "Pose/forma assimétrica no eixo X (só 69% da superfície espelhada a menos de 2% da altura): dificulta Symmetrize, pesos espelhados e retopologia simétrica."
+    },
+    {
+      "severity": "high",
+      "area": "materials",
+      "message": "Nenhuma textura ligada à malha: as cores da referência não estão no modelo (o GLB do Meshy foi exportado sem textura/UV)."
+    },
+    {
+      "severity": "low",
+      "area": "materials",
+      "message": "Materiais sem uso no arquivo: Material, Material_0.001."
+    },
+    {
+      "severity": "info",
+      "area": "rigging",
+      "message": "Nenhuma armature na cena: rigging ainda não iniciado."
+    }
+  ]
+}
